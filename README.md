@@ -65,5 +65,133 @@ _{
 
 part-3
 ```POST http://40.117.134.33:9200/bus_st/stoptimes/_search```
+{
+  "query": 
+        { 
+        	"match_phrase": 
+        	{ 
+        		"trip_id": "6219323-2012_08A-12AferSU-Sundau-01"
+        	}
+        }, "_source": ["trip_headsign"]
+}
 
+
+### Query 2
+
+Part-1
+POST http://40.86.219.24:9200/stopttimesdb/stoptimes/_search
+
+{   "query": {  
+    	"range" : {
+        	"arrival_time" : {
+            	"gte": "20:57:00", 
+            	"lte": "21:00:00",  
+            	"format": "HH:mm:ss"
+        	}
+    	}
+	}, "_source": ["trip_id"]
+}
+
+One of the trip_id (6530005-2012_08A-1208BRsu-Sunday-01)is chosen from the output obtain from the query to get all the buses.
+
+Part-2
+POST http://40.86.219.24:9200/tripdb/trips/_search
+
+{
+	"query": {
+		"match": {
+			"trip_id": "6530005-2012_08A-1208BRsu-Sunday-01"
+		}
+	},
+	"_source": "trip_headsign"
+}
+
+### Query 3
+Part-1
+POST http://40.86.219.24:9200/tripdb/trips/_search?q=route_id:FerD-116
+
+{
+  "query": 
+        { 
+        	"match_phrase": 
+        	{ 
+        		"trip_headsign": "FERRY TO HALIFAX"
+        	}
+        },
+  "_source": ["trip_id"]
+}
+
+Part-2
+POST http://40.86.219.24:9200/stopttimesdb/stoptimes/_search
+
+{
+    "query" : {
+        "match_phrase": {
+           "trip_id": "5807969-2012_05M-12MferWD-Weekday-00"
+        }
+    }, "_source": ["stop_id"]
+} 
+
+Part-3
+3.3 POST http://40.86.219.24:9200/stopdb/stops/_search
+
+{
+{   "query": {  
+    	"range" : {
+        	"stop_id" : {
+            	"gte": "1073", 
+            	"lte": "1074"
+        	}
+    	}
+	}, "_source": ["name_stop"]
+}
+
+### Query 4
+Part-
+POST http://40.86.219.24:9200/stopttimesdb/stoptimes/_search
+
+{
+	"size":0,
+	  "aggs": {
+	    "counts_stop_id": {
+	      "terms": {
+	        "field": "stop_id",
+	        "order" : { "_count" : "desc" },
+	    "size":3
+	      }
+	    }
+	  }
+}
+
+Part-2
+POST http://40.86.219.24:9200/stopdb/stops/_search
+{
+	"query" : {
+		"match" : {
+				"stop_id":"8643"
+		}
+	}, "_source":["name_stop"]
+}
+
+Part-4
+POST http://40.86.219.24:9200/stopdb/stops/_search
+
+{
+	"query" : {
+		"match" : {
+				"stop_id":"6105"
+		}
+	}, "_source":["name_stop"]
+}
+
+Part- 4
+POST http://40.86.219.24:9200/stopdb/stops/_search
+
+{
+	"query" : {
+		"match" : {
+				"stop_id":"6108"
+		}
+	}, "_source":["name_stop"]
+}
 
