@@ -25,13 +25,45 @@ Now run apt-get update and the repository is ready for use. it can be installed 
 
 ```sudo apt-get update && sudo apt-get install elasticsearch```
 
+upload the data on the server to perform search on it
+while performing the below mentioned queries, the body of the request needs to be populated with the data of the tables in JSON  
 
-Before stating to use the search, we need to make certain changes in the default files:
+```POST http://40.117.134.33:9200/bus/stops/_bulk```   and attcah stops.JSON
 
-```sudo vim /etc/elasticsearch/elasticsearch.yml```
+```POST http://40.117.134.33:9200/bus_tr/trips/_bulk```   and attcah trips.JSON
+
+```POST http://40.117.134.33:9200/bus_st/stoptimes/_bulk```   and attcah stoptimes.JSON
 
 
+### Query 1
+part-1 
 
+```POST http://40.117.134.33:9200/bus/stops/_search```
+_{
+  "query": 
+        { 
+        	"match_phrase": 
+        	{ 
+        		"name_stop": "south St [westbound] before I.w.k Hospital"
+        	}
+        }, "_source": ["stop_id"]
+}_
 
+part-2
+
+```POST http://40.117.134.33:9200/bus_st/stoptimes/_search```
+
+_{
+  "query": 
+        { 
+        	"match_phrase": 
+        	{ 
+        		"stop_id": "2026"
+        	}
+        }, "_source": ["trip_id"]
+}_
+
+part-3
+```POST http://40.117.134.33:9200/bus_st/stoptimes/_search```
 
 
