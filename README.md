@@ -6,9 +6,8 @@ Elastic search needs Java to perform its tasks, we neeed to add the rpository an
 
 Open your terminal and type the follwing commands
 
-_sudo add-apt-repository -y ppa:webupd8team/java_
-
-_sudo apt-get update_
+'''sudo add-apt-repository -y ppa:webupd8team/java'''
+'''sudo apt-get update'''
 
 _sudo apt-get -y install oracle-java8-installer_
 
