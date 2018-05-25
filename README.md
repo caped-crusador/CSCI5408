@@ -158,7 +158,7 @@ Part-3
 ### Query 4
 Part-1
 
-```POST http://40.117.134.33:9200/bus_stopttimes/stoptimes/_search```
+```POST http://40.117.134.33:9200/bus_stoptimes/stoptimes/_search```
 
 
 {
