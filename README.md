@@ -54,7 +54,7 @@ Part-1
 Part-2
 
 ```POST http://40.117.134.33:9200/bus_stoptimes/stoptimes/_search```
-
+```json
  {
   "query": 
         { 
@@ -64,11 +64,11 @@ Part-2
         	}
         }, "_source": ["trip_id"]
 }
-
+```
 Part-3
 
 ```POST http://40.117.134.33:9200/bus_stoptimes/stoptimes/_search```
-
+```json
 {
   "query": 
         { 
@@ -78,14 +78,13 @@ Part-3
         	}
         }, "_source": ["trip_headsign"]
 }
-
-
+```
 ### Query 2
 
 Part-1
 
 ```POST http://40.117.134.33:9200/bus_stoptimes/stoptimes/_search```
-
+```json
 {   "query": {  
     	"range" : {
         	"arrival_time" : {
@@ -96,13 +95,13 @@ Part-1
     	}
 	}, "_source": ["trip_id"]
 }
-
+```
 One of the trip_id (6530005-2012_08A-1208BRsu-Sunday-01)is chosen from the output obtain from the query to get all the buses.
 
 Part-2
 
 ```POST http://40.117.134.33:9200/bus_tr/trips/_search```
-
+```json
 {
 	"query": {
 		"match": {
@@ -111,13 +110,13 @@ Part-2
 	},
 	"_source": "trip_headsign"
 }
-
+```
 ### Query 3
 
 Part-1
 
 ```POST http://40.117.134.33:9200/bus_tr/trips/_search?q=route_id:FerD-116```
-
+```json
 {
   "query": 
         { 
@@ -128,11 +127,12 @@ Part-1
         },
   "_source": ["trip_id"]
 }
-
+```
 Part-2
 
 ```POST http://40.117.134.33:9200/bus_stoptimes/stoptimes/_search```
 
+```json
 {
     "query" : {
         "match_phrase": {
@@ -140,12 +140,12 @@ Part-2
         }
     }, "_source": ["stop_id"]
 } 
-
+```
 Part-3
 
 ```POST http://40.117.134.33:9200/bus/stops/_search```
 
-{
+```json
 {   "query": {  
     	"range" : {
         	"stop_id" : {
@@ -155,13 +155,13 @@ Part-3
     	}
 	}, "_source": ["name_stop"]
 }
-
+```
 ### Query 4
 Part-1
 
 ```POST http://40.117.134.33:9200/bus_stoptimes/stoptimes/_search```
 
-
+```json
 {
 	"size":0,
 	  "aggs": {
@@ -174,11 +174,11 @@ Part-1
 	    }
 	  }
 }
-
+```
 Part-2
 
 ```POST http://40.117.134.33:9200/bus/stops/_search```
-
+```json
 {
 	"query" : {
 		"match" : {
@@ -186,12 +186,12 @@ Part-2
 		}
 	}, "_source":["name_stop"]
 }
-
+```
 Part-3
 
 ```POST http://40.117.134.33:9200/bus/stops/_search```
 
-
+```json
 {
 	"query" : {
 		"match" : {
@@ -199,12 +199,12 @@ Part-3
 		}
 	}, "_source":["name_stop"]
 }
-
+```
 Part- 4
 
 ```POST http://40.117.134.33:9200/bus/stops/_search```
 
-
+```json
 {
 	"query" : {
 		"match" : {
@@ -212,4 +212,4 @@ Part- 4
 		}
 	}, "_source":["name_stop"]
 }
-
+```
