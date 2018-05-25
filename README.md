@@ -74,7 +74,7 @@ Part-3
         { 
         	"match_phrase": 
         	{ 
-        		"trip_id": "6219323-2012_08A-12AferSU-Sundau-01"
+        		"trip_id": "6530560-2012_08A-1208BRsu-Sunday-01"
         	}
         }, "_source": ["trip_headsign"]
 }
@@ -88,15 +88,15 @@ Part-1
 {   "query": {  
     	"range" : {
         	"arrival_time" : {
-            	"gte": "20:57:00", 
-            	"lte": "21:00:00",  
+            	"gte": "10:45:00", 
+            	"lte": "11:00:00",  
             	"format": "HH:mm:ss"
         	}
     	}
 	}, "_source": ["trip_id"]
 }
 ```
-One of the trip_id (6530005-2012_08A-1208BRsu-Sunday-01)is chosen from the output obtain from the query to get all the buses.
+One of the trip_id (6530560-2012_08A-1208BRsu-Sunday-01)is chosen from the output obtain from the query to get all the buses.
 
 Part-2
 
@@ -105,7 +105,7 @@ Part-2
 {
 	"query": {
 		"match": {
-			"trip_id": "6530005-2012_08A-1208BRsu-Sunday-01"
+			"trip_id": "6530560-2012_08A-1208BRsu-Sunday-01"
 		}
 	},
 	"_source": "trip_headsign"
@@ -122,7 +122,7 @@ Part-1
         { 
         	"match_phrase": 
         	{ 
-        		"trip_headsign": "FERRY TO HALIFAX"
+        		"trip_headsign": "1 SPRING GARDEN TO MUMFORD"
         	}
         },
   "_source": ["trip_id"]
@@ -136,7 +136,7 @@ Part-2
 {
     "query" : {
         "match_phrase": {
-           "trip_id": "5807969-2012_05M-12MferWD-Weekday-00"
+           "trip_id": "6530560-2012_08A-1208BRsu-Sunday-01"
         }
     }, "_source": ["stop_id"]
 } 
@@ -149,8 +149,8 @@ Part-3
 {   "query": {  
     	"range" : {
         	"stop_id" : {
-            	"gte": "1073", 
-            	"lte": "1074"
+            	"gte": "8327", 
+            	"lte": "8328"
         	}
     	}
 	}, "_source": ["name_stop"]
@@ -195,7 +195,7 @@ Part-3
 {
 	"query" : {
 		"match" : {
-				"stop_id":"6105"
+				"stop_id":"8650"
 		}
 	}, "_source":["name_stop"]
 }
@@ -208,7 +208,7 @@ Part- 4
 {
 	"query" : {
 		"match" : {
-				"stop_id":"6108"
+				"stop_id":"8655"
 		}
 	}, "_source":["name_stop"]
 }
