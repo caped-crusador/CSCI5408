@@ -39,7 +39,8 @@ while performing the below mentioned queries, the body of the request needs to b
 part-1 
 
 ```POST http://40.117.134.33:9200/bus/stops/_search```
-_{
+
+{
   "query": 
         { 
         	"match_phrase": 
@@ -66,6 +67,7 @@ _{
 part-3
 
 ```POST http://40.117.134.33:9200/bus_st/stoptimes/_search```
+
 {
   "query": 
         { 
@@ -158,6 +160,7 @@ Part-1
 
 ```POST http://40.86.219.24:9200/stopttimesdb/stoptimes/_search```
 
+
 {
 	"size":0,
 	  "aggs": {
@@ -174,6 +177,7 @@ Part-1
 Part-2
 
 ```POST http://40.86.219.24:9200/stopdb/stops/_search```
+
 {
 	"query" : {
 		"match" : {
@@ -186,6 +190,7 @@ Part-3
 
 ```POST http://40.86.219.24:9200/stopdb/stops/_search```
 
+
 {
 	"query" : {
 		"match" : {
@@ -197,6 +202,7 @@ Part-3
 Part- 4
 
 ```POST http://40.86.219.24:9200/stopdb/stops/_search```
+
 
 {
 	"query" : {
