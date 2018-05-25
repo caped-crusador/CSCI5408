@@ -40,7 +40,7 @@ Part-1
 
 ```POST http://40.117.134.33:9200/bus/stops/_search```
 
-{
+_{
   "query": 
         { 
         	"match_phrase": 
