@@ -64,6 +64,7 @@ _{
 }_
 
 part-3
+
 ```POST http://40.117.134.33:9200/bus_st/stoptimes/_search```
 {
   "query": 
@@ -79,7 +80,8 @@ part-3
 ### Query 2
 
 Part-1
-POST http://40.86.219.24:9200/stopttimesdb/stoptimes/_search
+
+```POST http://40.86.219.24:9200/stopttimesdb/stoptimes/_search```
 
 {   "query": {  
     	"range" : {
@@ -95,7 +97,8 @@ POST http://40.86.219.24:9200/stopttimesdb/stoptimes/_search
 One of the trip_id (6530005-2012_08A-1208BRsu-Sunday-01)is chosen from the output obtain from the query to get all the buses.
 
 Part-2
-POST http://40.86.219.24:9200/tripdb/trips/_search
+
+```POST http://40.86.219.24:9200/tripdb/trips/_search```
 
 {
 	"query": {
@@ -107,8 +110,10 @@ POST http://40.86.219.24:9200/tripdb/trips/_search
 }
 
 ### Query 3
+
 Part-1
-POST http://40.86.219.24:9200/tripdb/trips/_search?q=route_id:FerD-116
+
+```POST http://40.86.219.24:9200/tripdb/trips/_search?q=route_id:FerD-116```
 
 {
   "query": 
@@ -122,7 +127,8 @@ POST http://40.86.219.24:9200/tripdb/trips/_search?q=route_id:FerD-116
 }
 
 Part-2
-POST http://40.86.219.24:9200/stopttimesdb/stoptimes/_search
+
+```POST http://40.86.219.24:9200/stopttimesdb/stoptimes/_search```
 
 {
     "query" : {
@@ -133,7 +139,8 @@ POST http://40.86.219.24:9200/stopttimesdb/stoptimes/_search
 } 
 
 Part-3
-3.3 POST http://40.86.219.24:9200/stopdb/stops/_search
+
+```POST http://40.86.219.24:9200/stopdb/stops/_search```
 
 {
 {   "query": {  
@@ -147,8 +154,9 @@ Part-3
 }
 
 ### Query 4
-Part-
-POST http://40.86.219.24:9200/stopttimesdb/stoptimes/_search
+Part-1
+
+```POST http://40.86.219.24:9200/stopttimesdb/stoptimes/_search```
 
 {
 	"size":0,
@@ -164,7 +172,8 @@ POST http://40.86.219.24:9200/stopttimesdb/stoptimes/_search
 }
 
 Part-2
-POST http://40.86.219.24:9200/stopdb/stops/_search
+
+```POST http://40.86.219.24:9200/stopdb/stops/_search```
 {
 	"query" : {
 		"match" : {
@@ -173,8 +182,9 @@ POST http://40.86.219.24:9200/stopdb/stops/_search
 	}, "_source":["name_stop"]
 }
 
-Part-4
-POST http://40.86.219.24:9200/stopdb/stops/_search
+Part-3
+
+```POST http://40.86.219.24:9200/stopdb/stops/_search```
 
 {
 	"query" : {
@@ -185,7 +195,8 @@ POST http://40.86.219.24:9200/stopdb/stops/_search
 }
 
 Part- 4
-POST http://40.86.219.24:9200/stopdb/stops/_search
+
+```POST http://40.86.219.24:9200/stopdb/stops/_search```
 
 {
 	"query" : {
