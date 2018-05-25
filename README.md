@@ -49,13 +49,13 @@ Part-1
         		"name_stop": "south St [westbound] before I.w.k Hospital"
         	}
         }, "_source": ["stop_id"]
-}```
-
+}
+```
 Part-2
 
 ```POST http://40.117.134.33:9200/bus_stoptimes/stoptimes/_search```
 
-_{
+ {
   "query": 
         { 
         	"match_phrase": 
@@ -63,7 +63,7 @@ _{
         		"stop_id": "2026"
         	}
         }, "_source": ["trip_id"]
-}_
+}
 
 Part-3
 
