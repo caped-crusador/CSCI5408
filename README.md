@@ -40,7 +40,8 @@ Part-1
 
 ```POST http://40.117.134.33:9200/bus/stops/_search```
 
-_{
+```json
+{
   "query": 
         { 
         	"match_phrase": 
@@ -48,7 +49,7 @@ _{
         		"name_stop": "south St [westbound] before I.w.k Hospital"
         	}
         }, "_source": ["stop_id"]
-}_
+}```
 
 Part-2
 
